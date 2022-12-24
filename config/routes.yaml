@@ -3,3 +3,28 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+#home:
+#    # http://localhost:8000/
+#    path: /
+#    controller: App\Controller\DefaultController::home
+
+contact:
+    # http://localhost:8000/contact
+    path: /contact
+    controller: App\Controller\DefaultController::contact
+
+# https://symfony.com/doc/4.1/routing/redirect_in_config.html
+#mentions-legales:
+#    path: /mentions-legales # http://localhost:8000/mentions-legales
+#    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+#    default:
+#        route: default_home
+#        permanent: true
+
+# https://symfony.com/doc/4.0/templating/render_without_controller.html
+mentions-legales:
+    path: /mentions-legales # http://localhost:8000/mentions-legales
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+    defaults:
+        template: static/mentions-legales.html.twig
